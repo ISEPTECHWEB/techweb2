@@ -1,10 +1,10 @@
-package simplequery;
+package jdbc2;
 
 import org.apache.log4j.*;
 import java.sql.*;
 
-public class Query {
-	protected static Logger log = Logger.getLogger(Query.class);
+public class SQLProgram {
+	protected static Logger log = Logger.getLogger(SQLProgram.class);
 
 	public static void main(String[] args) {
 		Connection conn = null;
@@ -12,7 +12,7 @@ public class Query {
 		ResultSet rs = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			
+
 			String connectionUrl = "jdbc:mysql://localhost:3306/sakila-db";
 			String connectionUser = "root";
 			String connectionPassword = "root";
@@ -25,10 +25,6 @@ public class Query {
 				String lastName = rs.getString("last_name");
 				System.out.println("Last Name: " + lastName);
 			}
-
-			rs.close();
-			stmt.close();
-			conn.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();

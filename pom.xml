@@ -50,7 +50,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 							<goal>java</goal>
 						</goals>
 						<configuration>
-							<mainClass>simplequery.Query</mainClass>
+							<mainClass>jdbc1.SimpleQuery</mainClass>
 						</configuration>
 					</execution>
 				</executions>

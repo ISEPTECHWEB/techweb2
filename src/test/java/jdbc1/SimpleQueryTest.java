@@ -1,4 +1,4 @@
-package simplequery;
+package jdbc1;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -9,9 +9,9 @@ import java.sql.*;
 /**
  * Unit test for simple App.
  */
- public class QueryTest extends TestCase
+ public class SimpleQueryTest extends TestCase
  {
-	protected static Logger log = Logger.getLogger(QueryTest.class);
+	protected static Logger log = Logger.getLogger(SimpleQueryTest.class);
 	/**
 	 * Create the test case
 	 *
@@ -34,7 +34,7 @@ import java.sql.*;
        throw new IllegalStateException("Cannot connect to the database!", e);
      }
    }
-   
+
    public void testDriver()
    {
      try {
