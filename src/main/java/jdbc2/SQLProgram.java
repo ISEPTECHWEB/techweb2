@@ -35,3 +35,5 @@ public class SQLProgram {
 			}
 	}
 }
+
+// java SQLExec "JDBC:URL:FOR:DB" myDb.Driver.Name DBUserName DBPassword "SELECT MyDBQuery From MyMind"

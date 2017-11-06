@@ -10,13 +10,18 @@ public class SimpleQuery {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		try {
+
+		try { // Test loading of the driver jdbc for MySQL
 			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			throw new IllegalStateException("Cannot find the driver in the classpath", e);
+		}
 
-			String connectionUrl = "jdbc:mysql://localhost:3306/sakila-db";
-			String connectionUser = "root";
-			String connectionPassword = "root";
+		String connectionUrl = "jdbc:mysql://localhost:3306/sakila-db";
+		String connectionUser = "root";
+		String connectionPassword = "root";
 
+		try {
 			conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT last_name FROM actor ;");
@@ -34,4 +39,5 @@ public class SimpleQuery {
 				try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
 			}
 	}
+
 }
